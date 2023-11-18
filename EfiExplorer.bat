@@ -1,23 +1,37 @@
 @echo off
-chcp 65001 > nul
+chcp 1252 > nul
 setlocal
 title EFI Partition Explorer by dnchplay
-goto check_Permissions
+goto adm_chk
 
-:check_Permissions
+:adm_chk
     net session >nul 2>&1
     if %errorLevel% == 0 (
-        goto admin_Ok
+        goto adm_O
     ) else (
-	goto admin_Error
+	goto adm_E
     )
-    
-    pause >nul
+    pause > nul
 
 
+:adm_E
+	color 0C
+	mode con: cols=52 lines=10
 
+	echo    ?���������                                 ��?
+	echo  ��!��������                                 ���!��
+	echo  ��!�������                                 ����!��
+	echo  ��!��������                                 ���!��
+	echo  ##################################################
+	echo  #(�����������                                 ��)#
+	echo  #( Please, run the batch file with Admin rights )#
+	echo  #(______________________________________________)#
+	echo  ##################################################
 
-:admin_Ok
+	pause > nul
+	exit
+
+:adm_O
 	color 0A
 	mode con: cols=69 lines=16
 	echo  ____  ____  ____    ____  _  _  ____  __    _____  ____  ____  ____ 
@@ -66,19 +80,6 @@ if not "%filename%"=="" start %filename%
 
 exit
 
-:admin_Error
-	color 0C
-	mode con: cols=52 lines=10
-	echo    ♀                                            ♀
-	echo    !                                            !  
-	echo    !                                            !  
-	echo    !                                            !  
-	echo  ╔════════════════════════════════════════════════╗
-	echo  ║(                                              )║
-	echo  ║( Please, run the batch file with Admin rights )║
-	echo  ║(______________________________________________)║
-	echo  ╚════════════════════════════════════════════════╝
-	pause > nul
-	exit
+
  
 endlocal
