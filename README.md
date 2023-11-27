@@ -10,4 +10,4 @@ Usage: run EfiExplorer.bat as administarator.
 - You are having fun with a virtual machine and want to experiment with things like this (Huh, if I remove this file, what would happen?)
 ## Demo
 
-![(Demo GIF where I show how to use this tool)](https://raw.githubusercontent.com/dnchplay/EfiPartitionExplorer/main/demo/demo.gif)[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+![(Demo GIF where I show how to use this tool)](https://raw.githubusercontent.com/dnchplay/EfiPartitionExplorer/main/demo/demo.gif)
